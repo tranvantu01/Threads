@@ -5,20 +5,25 @@
   "main": "shopee-affiliate.js",
   "scripts": {
     "test": "node example.js",
-    "start": "node example.js"
+    "start": "node example.js",
+    "automation": "node automation-example.js",
+    "inspect": "node inspect-selectors.js"
   },
   "keywords": [
     "shopee",
     "affiliate",
     "api",
     "short-link",
-    "vietnam"
+    "vietnam",
+    "automation"
   ],
   "author": "",
   "license": "MIT",
   "engines": {
     "node": ">=18.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  },
   "devDependencies": {}
 }
