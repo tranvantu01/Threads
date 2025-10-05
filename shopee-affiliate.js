@@ -5,12 +5,13 @@ const crypto = require('crypto');
  * Xử lý việc tạo signature và gọi API Shopee Affiliate
  */
 class ShopeeAffiliateAPI {
-  constructor(partnerId, partnerKey) {
+  constructor(partnerId, partnerKey, defaultAffiliateId = null) {
     if (!partnerId || !partnerKey) {
       throw new Error('Partner ID và Partner Key là bắt buộc!');
     }
     this.partnerId = partnerId;
     this.partnerKey = partnerKey;
+    this.defaultAffiliateId = defaultAffiliateId;
     this.apiUrl = 'https://open-api.affiliate.shopee.vn/graphql';
   }
 
@@ -135,6 +136,121 @@ class ShopeeAffiliateAPI {
         error: error.message,
         errorType: error.name,
         originalUrl: originUrl,
+      };
+    }
+  }
+
+  /**
+   * Build Sub IDs array từ Affiliate ID và thông tin tracking khác
+   * @param {string} affiliateId - Affiliate ID của bạn
+   * @param {Object} trackingInfo - Thông tin tracking bổ sung
+   * @returns {string[]} Array 5 sub IDs
+   */
+  buildSubIds(affiliateId, trackingInfo = {}) {
+    const {
+      source = '',      // Nguồn traffic (vd: facebook, google, tiktok)
+      campaign = '',    // Tên campaign
+      medium = '',      // Medium (vd: social, email, cpc)
+      content = ''      // Content ID hoặc thông tin khác
+    } = trackingInfo;
+
+    return [
+      affiliateId || '',
+      source,
+      campaign,
+      medium,
+      content
+    ];
+  }
+
+  /**
+   * Generate short link với Affiliate ID được gắn tự động
+   * Đây là function tiện lợi nhất - chỉ cần truyền URL và Affiliate ID
+   * 
+   * @param {string} originUrl - URL gốc của sản phẩm Shopee
+   * @param {string} affiliateId - Affiliate ID của bạn (nếu không có sẽ dùng default)
+   * @param {Object} trackingInfo - Thông tin tracking bổ sung (optional)
+   * @returns {Promise<Object>} Response với shortLink
+   */
+  async generateShortLinkWithAffiliateId(originUrl, affiliateId = null, trackingInfo = {}) {
+    try {
+      // Sử dụng affiliateId được truyền vào, hoặc default, hoặc để trống
+      const finalAffiliateId = affiliateId || this.defaultAffiliateId || '';
+      
+      // Build sub IDs từ affiliate ID và tracking info
+      const subIds = this.buildSubIds(finalAffiliateId, trackingInfo);
+      
+      // Gọi function generateShortLink gốc
+      const result = await this.generateShortLink(originUrl, subIds);
+      
+      // Thêm thông tin về affiliate ID vào response
+      if (result.success) {
+        return {
+          ...result,
+          affiliateId: finalAffiliateId,
+          trackingInfo: trackingInfo,
+          subIds: subIds,
+        };
+      }
+      
+      return result;
+      
+    } catch (error) {
+      return {
+        success: false,
+        error: error.message,
+        errorType: error.name,
+        originalUrl: originUrl,
+      };
+    }
+  }
+
+  /**
+   * Generate nhiều short links cùng lúc với cùng Affiliate ID
+   * @param {string[]} urls - Array các URL sản phẩm
+   * @param {string} affiliateId - Affiliate ID của bạn
+   * @param {Object} trackingInfo - Thông tin tracking (áp dụng cho tất cả links)
+   * @returns {Promise<Object[]>} Array các responses
+   */
+  async generateBulkShortLinks(urls, affiliateId = null, trackingInfo = {}) {
+    if (!Array.isArray(urls) || urls.length === 0) {
+      throw new Error('urls phải là array và không được rỗng');
+    }
+
+    const results = await Promise.all(
+      urls.map(url => this.generateShortLinkWithAffiliateId(url, affiliateId, trackingInfo))
+    );
+
+    return results;
+  }
+
+  /**
+   * Extract thông tin sản phẩm từ Shopee URL
+   * @param {string} url - Shopee product URL
+   * @returns {Object} Thông tin sản phẩm (shop_id, item_id)
+   */
+  extractProductInfo(url) {
+    try {
+      // Format: https://shopee.vn/Product-Name-i.SHOP_ID.ITEM_ID
+      const match = url.match(/i\.(\d+)\.(\d+)/);
+      
+      if (!match) {
+        return {
+          success: false,
+          error: 'URL không đúng format Shopee'
+        };
+      }
+
+      return {
+        success: true,
+        shopId: match[1],
+        itemId: match[2],
+        fullUrl: url
+      };
+    } catch (error) {
+      return {
+        success: false,
+        error: error.message
       };
     }
   }

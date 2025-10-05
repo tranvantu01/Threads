@@ -52,7 +52,54 @@ Sửa trực tiếp trong file `example.js` hoặc code của bạn.
 
 ## 📖 Cách sử dụng
 
-### Basic Usage
+### 🚀 Quick Start - Cách nhanh nhất
+
+**Chỉ cần điền thông tin và chạy:**
+
+```bash
+node quick-start.js
+```
+
+Mở file `quick-start.js` và thay đổi:
+- `partnerId` → Partner ID của bạn
+- `partnerKey` → Partner Key của bạn  
+- `affiliateId` → Affiliate ID của bạn
+- `productUrl` → URL sản phẩm muốn tạo link
+
+### 💎 Recommended: Với Affiliate ID (Cách tốt nhất)
+
+```javascript
+const ShopeeAffiliateAPI = require('./shopee-affiliate');
+
+// Khởi tạo với Affiliate ID
+const shopeeAPI = new ShopeeAffiliateAPI(
+  'your_partner_id',
+  'your_partner_key',
+  'YOUR_AFFILIATE_ID'  // ⭐ Set affiliate ID ở đây
+);
+
+// Generate short link - tự động gắn Affiliate ID
+const result = await shopeeAPI.generateShortLinkWithAffiliateId(
+  'https://shopee.vn/Apple-Iphone-11-128GB-Local-Set-i.52377417.6309028319',
+  null,  // Dùng default affiliate ID
+  {
+    source: 'facebook',      // Nguồn traffic
+    campaign: 'summer_sale', // Campaign name
+    medium: 'social',        // Medium
+    content: 'post_001'      // Content ID
+  }
+);
+
+if (result.success) {
+  console.log('Short Link:', result.shortLink);
+  console.log('Affiliate ID:', result.affiliateId);
+  console.log('Sub IDs:', result.subIds);
+} else {
+  console.log('Error:', result.error);
+}
+```
+
+### Basic Usage (Không có Affiliate ID)
 
 ```javascript
 const ShopeeAffiliateAPI = require('./shopee-affiliate');
@@ -110,11 +157,29 @@ results.forEach((result, index) => {
 
 ## 🧪 Chạy Examples
 
+### Quick Start (Khuyến nghị)
+```bash
+node quick-start.js
+```
+Cách đơn giản nhất - chỉ cần điền thông tin và chạy!
+
+### Examples với Affiliate ID
+```bash
+node example-with-affiliate-id.js
+```
+File này chứa 6 examples:
+1. Set default Affiliate ID khi khởi tạo
+2. Truyền Affiliate ID khi gọi function
+3. Gắn Affiliate ID + Tracking info chi tiết
+4. Generate nhiều links với cùng Affiliate ID
+5. Extract thông tin sản phẩm từ URL
+6. Demo workflow thực tế (Facebook campaign)
+
+### Examples cơ bản
 ```bash
 node example.js
 ```
-
-File `example.js` chứa 5 examples:
+File này chứa 5 examples:
 1. Generate short link cơ bản
 2. Generate với Sub IDs
 3. Generate nhiều links cùng lúc
@@ -128,12 +193,13 @@ File `example.js` chứa 5 examples:
 #### Constructor
 
 ```javascript
-new ShopeeAffiliateAPI(partnerId, partnerKey)
+new ShopeeAffiliateAPI(partnerId, partnerKey, defaultAffiliateId)
 ```
 
 **Parameters:**
 - `partnerId` (string): Partner ID từ Shopee Affiliate Portal
 - `partnerKey` (string): Partner Key (secret) để tạo signature
+- `defaultAffiliateId` (string, optional): Affiliate ID mặc định của bạn
 
 #### Methods
 
@@ -161,9 +227,64 @@ Tạo Authorization header value.
 
 ---
 
+##### `buildSubIds(affiliateId, trackingInfo)`
+
+Build Sub IDs array từ Affiliate ID và thông tin tracking.
+
+**Parameters:**
+- `affiliateId` (string): Affiliate ID của bạn
+- `trackingInfo` (object): Object chứa source, campaign, medium, content
+
+**Returns:** `string[]` - Array 5 sub IDs
+
+---
+
+##### `generateShortLinkWithAffiliateId(originUrl, affiliateId, trackingInfo)` ⭐ Recommended
+
+**Cách TỐT NHẤT** - Generate short link với Affiliate ID tự động.
+
+**Parameters:**
+- `originUrl` (string): URL gốc của sản phẩm Shopee
+- `affiliateId` (string, optional): Affiliate ID (nếu null thì dùng default)
+- `trackingInfo` (object, optional): Thông tin tracking bổ sung
+  - `source` (string): Nguồn traffic (facebook, google, tiktok, etc.)
+  - `campaign` (string): Tên campaign
+  - `medium` (string): Medium (social, email, cpc, etc.)
+  - `content` (string): Content ID hoặc thông tin khác
+
+**Returns:** `Promise<Object>`
+
+Response Object:
+```javascript
+{
+  success: true,
+  shortLink: "https://...",
+  originalUrl: "...",
+  affiliateId: "...",      // Affiliate ID đã gắn
+  trackingInfo: {...},     // Thông tin tracking
+  subIds: [...],           // Array 5 sub IDs đã build
+  timestamp: 1234567890
+}
+```
+
+---
+
+##### `generateBulkShortLinks(urls, affiliateId, trackingInfo)`
+
+Generate nhiều short links cùng lúc với cùng Affiliate ID.
+
+**Parameters:**
+- `urls` (array): Array các URL sản phẩm
+- `affiliateId` (string, optional): Affiliate ID
+- `trackingInfo` (object, optional): Thông tin tracking
+
+**Returns:** `Promise<Object[]>` - Array các responses
+
+---
+
 ##### `generateShortLink(originUrl, subIds = [])`
 
-Generate short link affiliate từ product URL.
+Generate short link affiliate từ product URL (low-level function).
 
 **Parameters:**
 - `originUrl` (string): URL gốc của sản phẩm Shopee
@@ -171,17 +292,16 @@ Generate short link affiliate từ product URL.
 
 **Returns:** `Promise<Object>`
 
-Response Object:
-```javascript
-{
-  success: true,           // boolean
-  shortLink: "https://...", // string (nếu success)
-  originalUrl: "...",      // string
-  timestamp: 1234567890,   // number
-  error: "...",            // string (nếu có lỗi)
-  errorType: "..."         // string (nếu có lỗi)
-}
-```
+---
+
+##### `extractProductInfo(url)`
+
+Extract thông tin sản phẩm (shop_id, item_id) từ Shopee URL.
+
+**Parameters:**
+- `url` (string): Shopee product URL
+
+**Returns:** `Object` - { success, shopId, itemId }
 
 ---
 
