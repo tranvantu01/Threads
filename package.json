@@ -1,0 +1,29 @@
+{
+  "name": "shopee-affiliate-api",
+  "version": "1.0.0",
+  "description": "Shopee Affiliate API Client for generating short links",
+  "main": "shopee-affiliate.js",
+  "scripts": {
+    "test": "node example.js",
+    "start": "node example.js",
+    "automation": "node automation-example.js",
+    "inspect": "node inspect-selectors.js"
+  },
+  "keywords": [
+    "shopee",
+    "affiliate",
+    "api",
+    "short-link",
+    "vietnam",
+    "automation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  },
+  "devDependencies": {}
+}
