@@ -93,7 +93,7 @@ User Action (Popup)
 {
   "manifest_version": 3,
   "permissions": ["activeTab", "storage", "downloads"],
-  "host_permissions": ["https://www.threads.net/*"],
+  "host_permissions": ["https://www.threads.com/*"],
   "action": { "default_popup": "popup.html" },
   "background": { "service_worker": "background.js" },
   "content_scripts": [...]
@@ -418,7 +418,7 @@ function hashCode(str) {
 - **activeTab**: Only current tab access
 - **storage**: Isolated extension storage
 - **downloads**: User-initiated only
-- **host_permissions**: threads.net only
+- **host_permissions**: threads.com only
 
 ### Data Privacy
 - ✅ No external servers

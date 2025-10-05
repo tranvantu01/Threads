@@ -32,7 +32,7 @@ Hoặc download ZIP và giải nén.
 
 ### Bước 3: Test Extension (30 giây)
 
-1. Mở https://www.threads.net/@zuck
+1. Mở https://www.threads.com/@zuck
 2. Click icon extension
 3. Click "Tải dữ liệu"
 4. Lưu file JSON
@@ -45,7 +45,7 @@ Hoặc download ZIP và giải nén.
 
 ```
 1. Mở profile Threads bất kỳ
-   https://www.threads.net/@username
+   https://www.threads.com/@username
 
 2. Click icon Threads Downloader
 

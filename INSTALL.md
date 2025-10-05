@@ -80,13 +80,13 @@ cd threads-downloader
 ### Kiểm tra Permissions
 
 Extension cần các quyền sau:
-- ✅ Read data on threads.net
+- ✅ Read data on threads.com
 - ✅ Download files
 - ✅ Storage
 
 ### Test Extension
 
-1. Mở https://www.threads.net/@zuck (hoặc profile bất kỳ)
+1. Mở https://www.threads.com/@zuck (hoặc profile bất kỳ)
 2. Click icon Threads Downloader
 3. Popup sẽ hiện với status "Sẵn sàng"
 

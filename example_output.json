@@ -1,6 +1,6 @@
 {
   "username": "example_user",
-  "profileUrl": "https://www.threads.net/@example_user",
+  "profileUrl": "https://www.threads.com/@example_user",
   "extractedAt": "2025-10-05T10:30:00.000Z",
   "totalPosts": 3,
   "posts": [
@@ -33,7 +33,7 @@
           "https://example.com/more-info"
         ]
       },
-      "postUrl": "https://www.threads.net/@example_user/post/CxyZ123456789"
+      "postUrl": "https://www.threads.com/@example_user/post/CxyZ123456789"
     },
     {
       "id": "CxyZ987654321",
@@ -58,7 +58,7 @@
           "https://github.com/example/project"
         ]
       },
-      "postUrl": "https://www.threads.net/@example_user/post/CxyZ987654321"
+      "postUrl": "https://www.threads.com/@example_user/post/CxyZ987654321"
     },
     {
       "id": "CxyZ555555555",
@@ -72,7 +72,7 @@
         "shares": 456
       },
       "firstComment": null,
-      "postUrl": "https://www.threads.net/@example_user/post/CxyZ555555555"
+      "postUrl": "https://www.threads.com/@example_user/post/CxyZ555555555"
     }
   ],
   "options": {

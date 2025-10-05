@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Check if we're on a Threads page
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    if (tabs[0] && !tabs[0].url.includes('threads.net')) {
+    if (tabs[0] && !tabs[0].url.includes('threads.com')) {
       updateStatus('error', 'Vui lòng mở trang Threads');
       downloadBtn.disabled = true;
     }

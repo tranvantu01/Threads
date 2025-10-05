@@ -107,7 +107,7 @@ threads-downloader/
 - `activeTab` - Access current Threads page
 - `storage` - Save user preferences
 - `downloads` - Download JSON file
-- `https://www.threads.net/*` - Host permissions
+- `https://www.threads.com/*` - Host permissions
 
 #### APIs Used
 - Chrome Extension APIs

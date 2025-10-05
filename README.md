@@ -41,8 +41,8 @@ Extension này cho phép bạn tải xuống dữ liệu chi tiết từ bất k
 ## 📖 Hướng dẫn sử dụng
 
 ### Bước 1: Mở trang Threads Profile
-- Truy cập https://www.threads.net/@username (thay `username` bằng profile muốn tải)
-- Ví dụ: https://www.threads.net/@zuck
+- Truy cập https://www.threads.com/@username (thay `username` bằng profile muốn tải)
+- Ví dụ: https://www.threads.com/@zuck
 
 ### Bước 2: Mở Extension
 - Click vào icon Threads Downloader trên thanh toolbar
@@ -77,7 +77,7 @@ File JSON export có cấu trúc như sau:
 ```json
 {
   "username": "username",
-  "profileUrl": "https://www.threads.net/@username",
+  "profileUrl": "https://www.threads.com/@username",
   "extractedAt": "2025-10-05T10:30:00.000Z",
   "totalPosts": 50,
   "posts": [
@@ -107,7 +107,7 @@ File JSON export có cấu trúc như sau:
         "text": "Comment đầu tiên...",
         "links": ["https://example.com"]
       },
-      "postUrl": "https://www.threads.net/@username/post/..."
+      "postUrl": "https://www.threads.com/@username/post/..."
     }
   ],
   "options": {
@@ -160,7 +160,7 @@ Extension yêu cầu các permissions sau:
 - `activeTab` - Truy cập tab hiện tại để đọc dữ liệu Threads
 - `storage` - Lưu preferences của người dùng
 - `downloads` - Tải xuống file JSON
-- `https://www.threads.net/*` - Chỉ hoạt động trên Threads
+- `https://www.threads.com/*` - Chỉ hoạt động trên Threads
 
 ## 🔒 Bảo mật & Quyền riêng tư
 

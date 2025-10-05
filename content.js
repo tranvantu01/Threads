@@ -86,7 +86,7 @@ function extractUsername() {
   // Fallback: try meta tags
   const metaTags = document.querySelectorAll('meta[property^="og:"]');
   for (const meta of metaTags) {
-    if (meta.content.includes('threads.net/@')) {
+    if (meta.content.includes('threads.com/@')) {
       const match = meta.content.match(/@([^\/\?]+)/);
       if (match) return match[1];
     }
@@ -339,7 +339,7 @@ function extractFirstComment(article) {
   const commentText = commentSection.textContent.trim();
   const links = Array.from(commentSection.querySelectorAll('a'))
     .map(a => a.href)
-    .filter(href => href && !href.includes('threads.net/@'));
+    .filter(href => href && !href.includes('threads.com/@'));
 
   if (commentText || links.length > 0) {
     return {
