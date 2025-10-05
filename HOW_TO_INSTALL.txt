@@ -1,0 +1,171 @@
+═══════════════════════════════════════════════════════════════════
+  THREADS PROFILE DATA DOWNLOADER - HƯỚNG DẪN CÀI ĐẶT
+═══════════════════════════════════════════════════════════════════
+
+📦 BẠN ĐÃ TẢI VỀ: threads-downloader-extension.zip
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 CÁCH CÀI ĐẶT (3 BƯỚC ĐỂ)
+
+BƯỚC 1: GIẢI NÉN FILE ZIP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   • Click chuột phải vào file threads-downloader-extension.zip
+   • Chọn "Extract All..." hoặc "Giải nén..."
+   • Giải nén vào thư mục bất kỳ (ví dụ: Desktop)
+   
+   Bạn sẽ có thư mục chứa các files:
+   ├── manifest.json
+   ├── popup.html
+   ├── popup.js
+   ├── content.js
+   ├── background.js
+   ├── styles.css
+   ├── icons/
+   ├── README.md
+   └── ... (và các files khác)
+
+BƯỚC 2: MỞ CHROME EXTENSIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   • Mở Chrome hoặc Edge
+   • Gõ vào thanh địa chỉ: chrome://extensions/
+   • Hoặc: Menu (⋮) → More Tools → Extensions
+   • Bật "Developer mode" ở góc trên bên phải
+
+BƯỚC 3: LOAD EXTENSION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   • Click nút "Load unpacked" (Tải tiện ích đã giải nén)
+   • Chọn thư mục đã giải nén ở Bước 1
+   • Click "Select Folder"
+   • Done! Icon extension sẽ xuất hiện trên thanh toolbar 🎉
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 CÁCH SỬ DỤNG
+
+1. Mở profile Threads:
+   https://www.threads.com/@username
+   (Ví dụ: https://www.threads.com/@zuck)
+
+2. Click icon "Threads Downloader" trên toolbar
+
+3. Chọn tùy chọn:
+   ☑ Tải media (ảnh & video)
+   ☑ Lấy comment đầu tiên
+   ☑ Số liệu tương tác
+   
+4. Nhập giới hạn số bài viết (1-1000)
+
+5. Click "Tải dữ liệu"
+
+6. Đợi extension xử lý (có progress bar)
+
+7. Lưu file JSON khi được hỏi
+
+8. Done! Bạn đã có dữ liệu Threads 🎊
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 FILE JSON CHỨA GÌ?
+
+File JSON bạn tải về sẽ có cấu trúc:
+
+{
+  "username": "username",
+  "profileUrl": "https://www.threads.com/@username",
+  "totalPosts": 50,
+  "posts": [
+    {
+      "content": "Nội dung bài viết...",
+      "media": [
+        {"type": "image", "url": "https://..."},
+        {"type": "video", "url": "https://..."}
+      ],
+      "engagement": {
+        "likes": 1234,
+        "comments": 56,
+        "reposts": 78,
+        "shares": 90
+      },
+      "firstComment": {
+        "text": "Comment đầu tiên...",
+        "links": ["https://link1.com", "https://link2.com"]
+      }
+    }
+  ]
+}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ TÍNH NĂNG
+
+✅ Tải nội dung text bài viết
+✅ Tải URLs của ảnh và video
+✅ Lấy số liệu: likes, shares, reposts, comments
+✅ Lấy comment đầu tiên với links
+✅ Giao diện đẹp, dễ dùng
+✅ Progress bar real-time
+✅ Dừng giữa chừng được
+✅ Tự động scroll load thêm posts
+✅ Export JSON có cấu trúc
+✅ Hoàn toàn miễn phí!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔒 BẢO MẬT
+
+✅ Không thu thập dữ liệu cá nhân
+✅ Không gửi data ra ngoài
+✅ Xử lý 100% trên máy bạn
+✅ Open source (MIT License)
+✅ Không tracking, không ads
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ TROUBLESHOOTING
+
+Lỗi: "Extensions must be installed from Chrome Web Store"
+→ Giải pháp: Đảm bảo đã BẬT "Developer mode"
+
+Lỗi: Extension không hoạt động
+→ Giải pháp: Kiểm tra bạn đang ở trang threads.com
+→ Refresh lại trang web và thử lại
+
+Lỗi: Không tải được nhiều posts
+→ Giải pháp: Threads có thể giới hạn
+→ Thử giảm số lượng xuống 20-50 posts
+
+Extension biến mất sau khi khởi động lại Chrome
+→ Giải pháp: Đây là bình thường với Developer mode
+→ Chỉ cần vào chrome://extensions/ và enable lại
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 TÀI LIỆU CHI TIẾT
+
+Sau khi giải nén, bạn có thể đọc các files:
+
+• README.md         - Tài liệu đầy đủ nhất
+• INSTALL.md        - Hướng dẫn cài đặt chi tiết
+• QUICKSTART.md     - Hướng dẫn nhanh 5 phút
+• example_output.json - Ví dụ dữ liệu output
+
+Mở bằng Notepad, VSCode, hoặc text editor bất kỳ.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💬 HỖ TRỢ
+
+Nếu cần trợ giúp:
+• Đọc README.md trong thư mục
+• Kiểm tra INSTALL.md cho troubleshooting
+• Review example_output.json để hiểu cấu trúc data
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎉 CHÚC BẠN SỬ DỤNG VUI VẺ!
+
+Made with ❤️ by Expert Extension Developer
+Version: 1.0.0
+
+═══════════════════════════════════════════════════════════════════

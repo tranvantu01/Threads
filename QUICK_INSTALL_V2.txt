@@ -1,0 +1,231 @@
+═══════════════════════════════════════════════════════════════════
+  THREADS DOWNLOADER PRO v2.0 - CÀI ĐẶT SIÊU NHANH
+═══════════════════════════════════════════════════════════════════
+
+📦 BẠN ĐÃ TẢI: threads-downloader-pro-v2.0.zip
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 3 BƯỚC CÀI ĐẶT (2 phút)
+
+BƯỚC 1: GIẢI NÉN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   • Click chuột phải vào file .zip
+   • Chọn "Extract All..." hoặc "Giải nén..."
+   • Giải nén vào Desktop hoặc thư mục bất kỳ
+
+BƯỚC 2: LOAD VÀO CHROME
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   • Mở Chrome/Edge
+   • Gõ: chrome://extensions/
+   • Bật "Developer mode" (góc trên phải)
+   • Click "Load unpacked"
+   • Chọn thư mục đã giải nén
+
+BƯỚC 3: SỬ DỤNG
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   • Icon extension xuất hiện
+   • Click icon → 3 tabs:
+     - Tải đơn
+     - Tải nhiều (⭐ NEW)
+     - Lịch trình (⭐ NEW)
+   • Done! 🎉
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ 5 TÍNH NĂNG PRO MỚI
+
+1️⃣  TẢI NHIỀU PROFILES
+   • Tab "Tải nhiều"
+   • Paste URLs (mỗi dòng 1 URL):
+     https://www.threads.com/@user1
+     https://www.threads.com/@user2
+   • Hoặc upload file TXT
+   • Click "Tải dữ liệu"
+
+2️⃣  SHOPEE AFFILIATE (ID: 17357490088)
+   • Tự động phát hiện link Shopee
+   • Chuyển: shopee.vn/abc → shopee.vn/abc?af_siteid=17357490088
+   • Export cả 2 versions trong Excel
+
+3️⃣  EXCEL EXPORT (1 post = 1 dòng)
+   • Format chuẩn Excel
+   • 13 cột đầy đủ
+   • STT | Tên | Content | Media | Shopee | Shopee Converted | ...
+
+4️⃣  UPLOAD FILE TXT
+   • Tab "Tải nhiều"
+   • Click "📁 Hoặc upload file TXT"
+   • Chọn file urls.txt
+   • Auto process
+
+5️⃣  SCHEDULE DOWNLOADS
+   • Tab "Lịch trình"
+   • Chọn ngày + giờ
+   • Nhập URL
+   • Tự động tải vào giờ đã đặt
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 QUICK START - 5 USE CASES
+
+USE CASE 1: Tải 1 Profile
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   1. Tab "Tải đơn"
+   2. Mở https://www.threads.com/@username
+   3. Click "Tải dữ liệu"
+   4. Chọn format: Excel (recommended)
+   5. Save file
+
+USE CASE 2: Tải Nhiều Profiles
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   1. Tab "Tải nhiều"
+   2. Paste URLs vào textarea:
+      https://www.threads.com/@user1
+      https://www.threads.com/@user2
+      https://www.threads.com/@user3
+   3. Click "Tải dữ liệu"
+   4. Đợi xử lý (progress bar)
+   5. Export Excel tổng hợp
+
+USE CASE 3: Upload File TXT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   1. Tạo file urls.txt:
+      https://www.threads.com/@user1
+      https://www.threads.com/@user2
+   
+   2. Tab "Tải nhiều"
+   3. Click "📁 Hoặc upload file TXT"
+   4. Chọn urls.txt
+   5. Click "Tải dữ liệu"
+
+USE CASE 4: Shopee Affiliate
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   1. Enable "Chuyển đổi link Shopee Affiliate"
+   2. Tải profile có link Shopee
+   3. Mở Excel
+   4. Check 2 cột:
+      • "Link Shopee" (gốc)
+      • "Link Shopee đã đổi ID" (affiliate)
+   5. Copy link affiliate để share → Kiếm tiền! 💰
+
+USE CASE 5: Schedule
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   1. Tab "Lịch trình"
+   2. Chọn ngày: 06/10/2025
+   3. Chọn giờ: 14:30
+   4. URL: https://www.threads.com/@username
+   5. Click "⏰ Thêm lịch trình"
+   6. Browser phải mở vào thời gian đó
+   7. Nhận notification khi xong
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 FORMAT FILE TXT (urls.txt)
+
+Chuẩn:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+https://www.threads.com/@user1
+https://www.threads.com/@user2
+https://www.threads.com/@user3
+
+Rules:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Mỗi dòng 1 URL
+✅ URL phải có threads.com
+✅ Format: https://www.threads.com/@username
+❌ Không thêm text khác
+❌ Không để dòng trống
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 CÁC CỘT TRONG EXCEL
+
+1.  STT
+2.  Tên Tài Khoản
+3.  Content
+4.  Số lượng media
+5.  Media URLs (newline-separated)
+6.  Lượt thích
+7.  Bình luận
+8.  Đăng lại
+9.  Chia sẻ
+10. Comment đầu
+11. Link Shopee (gốc)
+12. Link Shopee đã đổi ID (affiliate)
+13. Thời gian tải
+
+✅ Mỗi post = 1 dòng Excel
+✅ Tất cả data cùng 1 row
+✅ Shopee: Original và Converted song song
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🛍️ SHOPEE AFFILIATE
+
+Affiliate ID: 17357490088
+
+Cách hoạt động:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   1. Extension phát hiện link Shopee
+   2. Tự động convert:
+      shopee.vn/product → shopee.vn/product?af_siteid=17357490088
+   3. Export Excel có 2 cột:
+      • Link gốc
+      • Link đã convert
+   4. Bạn copy link converted để share
+   5. Kiếm commission khi có người mua! 💰
+
+Hỗ trợ domains:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ✅ shopee.vn
+   ✅ shopee.com.vn
+   ✅ shope.ee
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ FAQ
+
+Q: Extension không load?
+A: Check "Developer mode" đã bật chưa
+
+Q: Shopee links không convert?
+A: Enable option "Chuyển đổi link Shopee Affiliate"
+
+Q: Excel không mở được?
+A: Dùng Microsoft Excel (không phải Google Sheets)
+
+Q: Schedule không chạy?
+A: Browser phải đang mở (có thể minimize)
+
+Q: Upload TXT lỗi?
+A: Check file encoding UTF-8, mỗi dòng 1 URL
+
+Q: Tải nhiều profiles bị lag?
+A: Bình thường, mỗi profile ~2-3 phút
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 ĐỌC THÊM
+
+README_V2_PRO.md → Full documentation (13 KB)
+UPGRADE_GUIDE_V2.md → Migration guide (6 KB)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎉 EXTENSION SẴN SÀNG!
+
+Version: 2.0.0 Pro
+Features: 5 major upgrades
+Shopee Affiliate ID: 17357490088
+Format: Excel / CSV / JSON
+Quality: Production Ready
+
+Made with ❤️ by Expert Extension Developer
+30 Years of Expertise
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 Chúc bạn download vui vẻ và kiếm tiền với Shopee Affiliate! 💰
+
+═══════════════════════════════════════════════════════════════════

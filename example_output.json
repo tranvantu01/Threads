@@ -1,0 +1,84 @@
+{
+  "username": "example_user",
+  "profileUrl": "https://www.threads.com/@example_user",
+  "extractedAt": "2025-10-05T10:30:00.000Z",
+  "totalPosts": 3,
+  "posts": [
+    {
+      "id": "CxyZ123456789",
+      "timestamp": "2025-10-05T09:00:00.000Z",
+      "content": "Đây là một bài viết ví dụ trên Threads với nội dung thú vị về công nghệ và cuộc sống. #threads #technology",
+      "media": [
+        {
+          "type": "image",
+          "url": "https://cdninstagram.com/example_image_1.jpg",
+          "alt": "Hình ảnh mô tả công nghệ"
+        },
+        {
+          "type": "image",
+          "url": "https://cdninstagram.com/example_image_2.jpg",
+          "alt": "Hình ảnh thứ hai"
+        }
+      ],
+      "engagement": {
+        "likes": 1234,
+        "comments": 56,
+        "reposts": 78,
+        "shares": 90
+      },
+      "firstComment": {
+        "text": "Comment đầu tiên rất hay! Xem thêm tại đây nhé",
+        "links": [
+          "https://example.com/article",
+          "https://example.com/more-info"
+        ]
+      },
+      "postUrl": "https://www.threads.com/@example_user/post/CxyZ123456789"
+    },
+    {
+      "id": "CxyZ987654321",
+      "timestamp": "2025-10-04T15:30:00.000Z",
+      "content": "Video hướng dẫn tạo extension Chrome rất chi tiết và dễ hiểu. Mọi người xem nhé!",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://cdninstagram.com/example_video.mp4",
+          "poster": "https://cdninstagram.com/example_video_poster.jpg"
+        }
+      ],
+      "engagement": {
+        "likes": 5678,
+        "comments": 234,
+        "reposts": 456,
+        "shares": 123
+      },
+      "firstComment": {
+        "text": "Link tải source code tại GitHub",
+        "links": [
+          "https://github.com/example/project"
+        ]
+      },
+      "postUrl": "https://www.threads.com/@example_user/post/CxyZ987654321"
+    },
+    {
+      "id": "CxyZ555555555",
+      "timestamp": "2025-10-03T08:15:00.000Z",
+      "content": "Chia sẻ kinh nghiệm 30 năm làm developer. Từ những ngày đầu code assembly đến hiện tại với AI và machine learning. Công nghệ thay đổi từng ngày!",
+      "media": [],
+      "engagement": {
+        "likes": 9876,
+        "comments": 543,
+        "reposts": 234,
+        "shares": 456
+      },
+      "firstComment": null,
+      "postUrl": "https://www.threads.com/@example_user/post/CxyZ555555555"
+    }
+  ],
+  "options": {
+    "includeMedia": true,
+    "includeFirstComment": true,
+    "includeEngagement": true,
+    "limit": 50
+  }
+}
