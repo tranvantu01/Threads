@@ -170,15 +170,25 @@ async function loadAndExtractPosts(options) {
 
 function extractPostData(article, options) {
   try {
+    const content = extractContent(article);
+    const firstComment = options.includeFirstComment ? extractFirstComment(article) : null;
+    
     const postData = {
       id: generatePostId(article),
       timestamp: extractTimestamp(article),
-      content: extractContent(article),
+      content: content,
       media: options.includeMedia ? extractMedia(article) : [],
       engagement: options.includeEngagement ? extractEngagement(article) : {},
-      firstComment: options.includeFirstComment ? extractFirstComment(article) : null,
+      firstComment: firstComment,
       postUrl: extractPostUrl(article)
     };
+
+    // Extract Shopee links if convertShopee option is enabled
+    if (options.convertShopee) {
+      const shopeeLinks = extractShopeeLinksFromPost(content, firstComment);
+      postData.shopeeLinks = shopeeLinks.original;
+      postData.shopeeLinksConverted = shopeeLinks.converted;
+    }
 
     return postData;
   } catch (error) {
@@ -387,6 +397,83 @@ function hashCode(str) {
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Shopee link extraction and conversion
+function extractShopeeLinksFromPost(content, firstComment) {
+  const original = [];
+  const converted = [];
+  const SHOPEE_AFFILIATE_ID = '17357490088';
+
+  // Regex patterns for Shopee links
+  const patterns = [
+    /https?:\/\/(?:www\.)?shopee\.vn\/[^\s<>"']+/gi,
+    /https?:\/\/(?:www\.)?shopee\.com\.vn\/[^\s<>"']+/gi,
+    /https?:\/\/shope\.ee\/[^\s<>"']+/gi
+  ];
+
+  // Extract from content
+  if (content) {
+    patterns.forEach(pattern => {
+      const matches = content.match(pattern) || [];
+      matches.forEach(link => {
+        if (!original.includes(link)) {
+          original.push(link);
+          converted.push(convertShopeeToAffiliate(link, SHOPEE_AFFILIATE_ID));
+        }
+      });
+    });
+  }
+
+  // Extract from first comment
+  if (firstComment) {
+    // From comment text
+    if (firstComment.text) {
+      patterns.forEach(pattern => {
+        const matches = firstComment.text.match(pattern) || [];
+        matches.forEach(link => {
+          if (!original.includes(link)) {
+            original.push(link);
+            converted.push(convertShopeeToAffiliate(link, SHOPEE_AFFILIATE_ID));
+          }
+        });
+      });
+    }
+
+    // From comment links array
+    if (firstComment.links && Array.isArray(firstComment.links)) {
+      firstComment.links.forEach(link => {
+        if (isShopeeLink(link) && !original.includes(link)) {
+          original.push(link);
+          converted.push(convertShopeeToAffiliate(link, SHOPEE_AFFILIATE_ID));
+        }
+      });
+    }
+  }
+
+  return { original, converted };
+}
+
+function isShopeeLink(url) {
+  if (!url || typeof url !== 'string') return false;
+  return url.includes('shopee.vn') || 
+         url.includes('shopee.com.vn') || 
+         url.includes('shope.ee');
+}
+
+function convertShopeeToAffiliate(url, affiliateId) {
+  try {
+    const urlObj = new URL(url);
+    
+    // Add or update af_siteid parameter
+    urlObj.searchParams.set('af_siteid', affiliateId);
+    
+    return urlObj.toString();
+  } catch (e) {
+    // If URL parsing fails, append manually
+    const separator = url.includes('?') ? '&' : '?';
+    return `${url}${separator}af_siteid=${affiliateId}`;
+  }
 }
 
 // Log that content script is loaded

@@ -1,18 +1,20 @@
 {
   "manifest_version": 3,
-  "name": "Threads Profile Data Downloader",
-  "version": "1.0.0",
-  "description": "Download profile data from Threads including posts, media, engagement metrics, and first comments",
+  "name": "Threads Profile Data Downloader Pro",
+  "version": "2.0.0",
+  "description": "Download multiple Threads profiles, convert Shopee affiliate links, export to Excel, schedule downloads",
   "permissions": [
     "activeTab",
     "storage",
-    "downloads"
+    "downloads",
+    "alarms",
+    "tabs"
   ],
   "host_permissions": [
     "https://www.threads.com/*"
   ],
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "popup-v2.html",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
@@ -20,7 +22,7 @@
     }
   },
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background-v2.js"
   },
   "content_scripts": [
     {

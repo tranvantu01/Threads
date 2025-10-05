@@ -357,3 +357,285 @@ body {
 .hidden {
   display: none !important;
 }
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.tab-btn {
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: #718096;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.tab-btn:hover {
+  color: #667eea;
+}
+
+.tab-btn.active {
+  color: #667eea;
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Input Section */
+.input-section {
+  margin-bottom: 20px;
+}
+
+.input-section label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 8px;
+}
+
+.input-section textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: monospace;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-section textarea:focus {
+  border-color: #667eea;
+}
+
+/* File Upload */
+.file-upload-section {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.file-upload-btn {
+  padding: 10px 16px;
+  background: #f7fafc;
+  border: 2px dashed #cbd5e0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.file-upload-btn:hover {
+  background: #edf2f7;
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.file-name {
+  font-size: 13px;
+  color: #718096;
+}
+
+/* Multi Status */
+.multi-status {
+  background: #f7fafc;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.multi-progress span {
+  display: block;
+  font-size: 13px;
+  color: #4a5568;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+/* Schedule Section */
+.schedule-section {
+  margin-bottom: 20px;
+}
+
+.schedule-section > label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.schedule-input-group {
+  margin-bottom: 12px;
+}
+
+.schedule-input-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 6px;
+}
+
+.schedule-input-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.schedule-input-group input:focus {
+  border-color: #667eea;
+}
+
+.scheduled-list {
+  margin-top: 20px;
+  background: #f7fafc;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.scheduled-list h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.schedule-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.schedule-info {
+  flex: 1;
+}
+
+.schedule-time {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 4px;
+}
+
+.schedule-url {
+  font-size: 12px;
+  color: #718096;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.delete-schedule {
+  padding: 6px 10px;
+  background: #fee;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.delete-schedule:hover {
+  background: #fcc;
+}
+
+.no-schedules {
+  text-align: center;
+  color: #a0aec0;
+  font-size: 13px;
+  padding: 20px;
+}
+
+/* Export Section */
+.export-section {
+  margin-bottom: 20px;
+}
+
+.export-section label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 12px;
+}
+
+.radio-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.radio-item:hover {
+  border-color: #667eea;
+  background: #f7fafc;
+}
+
+.radio-item input[type="radio"] {
+  margin-right: 6px;
+}
+
+.radio-item input[type="radio"]:checked + span {
+  font-weight: 600;
+  color: #667eea;
+}
+
+.radio-item span {
+  font-size: 13px;
+  color: #4a5568;
+}
